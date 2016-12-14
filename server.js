@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const username = require('./config').username;
-// const password = require('./config').password;
 const FewestGuesses = require('./models/guesses');
 const bodyParser = require('body-parser');
 const cors = require('cors')
