@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const username = require('./config').username;
-const password = require('./config').password;
+// const username = require('./config').username;
+// const password = require('./config').password;
 const FewestGuesses = require('./models/guesses');
 const bodyParser = require('body-parser');
 const cors = require('cors')
@@ -14,7 +14,7 @@ app.use(cors());
 
 const id = "584c90125c7cb208f0a4aa5d"
 const port = 8080;
-const url = `mongodb://${username}:${password}@ds127958.mlab.com:27958/redux-hotcold`;
+const url = process.env.PROD_MONGODB;
 mongoose.connect(url);
 
 // app.use(function(req, res, next) {
