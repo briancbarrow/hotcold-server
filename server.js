@@ -16,6 +16,12 @@ const port = 8080;
 const url = `mongodb://${username}:${password}@ds127958.mlab.com:27958/redux-hotcold`;
 mongoose.connect(url);
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/fewest-guesses', function(req, res) {
   FewestGuesses.find({}, function(err, data) {
     if(err) {
