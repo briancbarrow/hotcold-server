@@ -39,6 +39,6 @@ app.put('/fewest-guesses', function(req, res) {
     })
   })
 })
-app.listen(process.env.port || port, function() {
+app.listen(process.env.PORT || port, function() {
   console.log("listening on port 3000")
 })
